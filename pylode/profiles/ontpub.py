@@ -169,10 +169,10 @@ class OntPub:
 
         # description
         for s_, o in chain(
-            g.subject_objects(DC.description),
-            g.subject_objects(RDFS.comment),
             g.subject_objects(SKOS.definition),
+            g.subject_objects(DC.description),
             g.subject_objects(SDO.description),
+            g.subject_objects(RDFS.comment),
         ):
             g.add((s_, DCTERMS.description, o))
 

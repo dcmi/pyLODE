@@ -307,10 +307,10 @@ def load_background_onts():
 
         # make regular descriptions
         for s_, o in chain(
-            back_ont.subject_objects(DC.description),
-            back_ont.subject_objects(RDFS.comment),
             back_ont.subject_objects(SKOS.definition),
+            back_ont.subject_objects(DC.description),
             back_ont.subject_objects(SDO.description),
+            back_ont.subject_objects(RDFS.comment),
         ):
             back_ont.add((s_, DCTERMS.description, o))
 
