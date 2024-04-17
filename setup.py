@@ -13,7 +13,7 @@ def open_local(paths, mode="r", encoding="utf8"):
 with open_local(["README.rst"], encoding="utf-8") as readme:
     long_description = readme.read()
 
-with open_local(["pylode/requirements.txt"]) as req:
+with open_local(["requirements.txt"]) as req:
     install_requires = req.read().split("\n")
 
 setup(
