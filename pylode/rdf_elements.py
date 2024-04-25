@@ -32,6 +32,7 @@ ONT_PROPS = [
     DCTERMS.provenance,
     SKOS.note,
     DCTERMS.description,
+    RDFS.comment,
     ONTDOC.restriction,
 ]
 
@@ -40,6 +41,7 @@ CLASS_PROPS = [
     RDFS.isDefinedBy,
     DCTERMS.title,
     SKOS.definition,
+    RDFS.comment,
     DCTERMS.description,
     SKOS.scopeNote,
     SKOS.example,
