@@ -217,6 +217,7 @@ def back_onts_label_props(back_onts: Graph):
         title_ = None
         description = None
         ont_title = None
+
         for p_, o in back_onts.predicate_objects(prop_iri):
             if p_ == DCTERMS.title:
                 title_ = o
@@ -239,6 +240,7 @@ def back_onts_label_props(back_onts: Graph):
     pl = {}
     for prop in PROPS:
         pl[prop] = _get_prop_label(prop, back_onts)
+
     return pl
 
 
@@ -438,6 +440,7 @@ def rdf_obj_html(
             v = back_onts__.value(
                 subject=iri__, predicate=DCTERMS.title
             )  # no need to check other labels: inference
+
             if v is None:
                 v = ont__.value(subject=iri__, predicate=DCTERMS.title)
             if v is not None:
@@ -728,12 +731,18 @@ def prop_obj_pair_html(
 ):
     """Makes an HTML Definition list dt & dd pair or a Table tr, th & td set,
     for a given RDF property & resource pair"""
+
+    label = str(property_title).title()
+
+    """Change label for RDFS:COMMENT from Comment to Definition"""
+
     prop = a(
-        str(property_title).title(),
+        "Definition" if label == "Comment" else label,
         title=str(property_description).rstrip(".") + ". Defined in " + str(ont_title),
         _class="hover_property",
         href=str(prop_iri),
     )
+    
     o = rdf_obj_html(ont, back_onts, ns, obj, fids, rdf_type=obj_type, prop=prop_iri)
 
     if table_or_dl == "table":
@@ -811,6 +820,7 @@ def section_html(
                             this_props_[prop],
                         )
                     )
+
         d.appendChild(t)
         return d
 
@@ -839,6 +849,7 @@ def section_html(
                         this_props[ONTDOC.restriction].append(o)
                     else:
                         this_props[p_].append(o)
+
             if len(this_props[DCTERMS.title]) == 0:
                 this_fid = generate_fid(None, s_, fids)
                 this_title = make_title_from_iri(s_)
