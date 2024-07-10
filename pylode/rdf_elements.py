@@ -32,6 +32,7 @@ ONT_PROPS = [
     DCTERMS.provenance,
     SKOS.note,
     DCTERMS.description,
+    RDFS.comment,
     ONTDOC.restriction,
 ]
 
@@ -39,6 +40,8 @@ ONT_PROPS = [
 CLASS_PROPS = [
     RDFS.isDefinedBy,
     DCTERMS.title,
+    SKOS.definition,
+    RDFS.comment,
     DCTERMS.description,
     SKOS.scopeNote,
     SKOS.example,
@@ -54,7 +57,7 @@ CLASS_PROPS = [
     ONTDOC.inRangeIncludesOf,
     ONTDOC.restriction,
     ONTDOC.hasInstance,
-    ONTDOC.superClassOf,
+    ONTDOC.superClassOf
 ]
 
 # properties for instances of RDF Property and OWL specialised
@@ -62,6 +65,7 @@ CLASS_PROPS = [
 PROP_PROPS = [
     RDFS.isDefinedBy,
     DCTERMS.title,
+    SKOS.definition,
     DCTERMS.description,
     SKOS.scopeNote,
     SKOS.example,
@@ -73,7 +77,7 @@ PROP_PROPS = [
     RDFS.domain,
     SDO.domainIncludes,
     RDFS.range,
-    SDO.rangeIncludes,
+    SDO.rangeIncludes
 ]
 
 # properties for Agents
