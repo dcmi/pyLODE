@@ -7,7 +7,7 @@
 
 **NOTE**
 
-This is a private fork of the rdflib/pyLODE repository.  The only change, other than the addition of this text to
+This is a copy of the rdflib/pyLODE repository.  The only change, other than the addition of this text to
 the readme, is a change in the display order of DC.description, RDFS.comment, SKOS.definition and SDO.description.
 
 I have not rebuilt any of the executables, etc.  To take advantage of the change, use cli.py in the pylode directory.
